@@ -13,11 +13,11 @@ and digital pin 3 [INT1]= physical pin 5)
 
  Pin    |  Interrrupt # | Arduino Platform
  ---------------------------------------
-  2      |  0            |  All
-  3      |  1            |  All
+  2     |  0            |  All
+  3     |  1            |  All
  18     |  5            |  Arduino Mega Only
  19     |  4            |  Arduino Mega Only
- 20    |  3            |  Arduino Mega Only
+ 20     |  3            |  Arduino Mega Only
  21     |  2            |  Arduino Mega Only
 In the program pin 2 is chosen
  */
@@ -28,8 +28,9 @@ int dimming = 128;  // Dimming level (0-128)  0 = ON, 128 = OFF
 flicker. It is safer to use a value slightly higher than ‘0’
 */
 
-int minim = 4;
+int minim = 12;
 int maxim = 128;
+int spid = 75;
 
 void setup()
 {
@@ -57,12 +58,12 @@ void loop()  {
  for (int i=minim; i <= maxim; i++)
 {
  dimming=i;
- delay(50);
+ delay(spid);
  }
  for (int i=maxim; i >= minim; i--)
 {
  dimming=i;
- delay(50);
+ delay(spid);
  }
 
  }
